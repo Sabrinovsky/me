@@ -3,10 +3,11 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import { Post } from "@/types/post";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): Post[] {
   const folders = fs.readdirSync(postsDirectory);
 
   const allPostsData = folders.map((folder) => {
@@ -23,19 +24,13 @@ export function getSortedPostsData() {
     };
   });
 
-  return allPostsData;
+  return allPostsData as Post[];
 }
 
 export function getAllPostIds() {
   const folders = fs.readdirSync(postsDirectory);
 
-  return folders.map((fileName) => {
-    return {
-      params: {
-        id: fileName,
-      },
-    };
-  });
+  return folders
 }
 
 export async function getPostData(id: string) {

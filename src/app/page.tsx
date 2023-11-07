@@ -1,3 +1,3 @@
 export default function Post() {
-  return <h1>Pages index</h1>;
+  return <h1>App index</h1>;
 }
