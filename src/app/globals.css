@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* rgb(223, 253, 255);
+rgb(255, 236, 254); */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,4 +26,6 @@ body {
     )
     rgb(var(--background-start-rgb));
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
